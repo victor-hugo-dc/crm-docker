@@ -41,6 +41,7 @@ services:
         bench --site $$SITES set-config developer_mode 1;
         bench --site $$SITES clear-cache;
         bench setup add-domain https://$$SITES --site $$SITES;
+        bench --site "${SITES}" set-config host_name https://$$SITES
         bench --site all migrate;
         bench --site all enable-scheduler;
     depends_on:
