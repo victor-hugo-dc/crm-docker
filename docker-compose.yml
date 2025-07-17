@@ -66,6 +66,7 @@ services:
       REDIS_SOCKETIO: ${REDIS_SOCKETIO}
       SITES: ${SITES}
       SOCKETIO_PORT: "9000"
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
     image: frappe/erpnext:${ERPNEXT_VERSION}
     networks:
       default: null
