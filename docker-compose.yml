@@ -32,7 +32,6 @@ services:
           --force \
           --db-type mariadb \
           --db-name erpnext \
-          --db-user frappe \
           --db-password $$MYSQL_ROOT_PASSWORD \
           --db-root-username root \
           --db-root-password $$MYSQL_ROOT_PASSWORD \
