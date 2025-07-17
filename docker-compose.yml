@@ -36,7 +36,7 @@ services:
           --install-app erpnext;
         bench --site $$SITES set-config developer_mode 1;
         bench --site $$SITES clear-cache;
-        bench setup --site $$SITES add-domain https://$$SITES;
+        bench setup add-domain https://$$SITES --site $$SITES;
         bench --site all migrate;
         bench --site all enable-scheduler;
     depends_on:
@@ -58,6 +58,7 @@ services:
       REDIS_CACHE: ${REDIS_CACHE}
       REDIS_QUEUE: ${REDIS_QUEUE}
       REDIS_SOCKETIO: ${REDIS_SOCKETIO}
+      SITES: ${SITES}
       SOCKETIO_PORT: "9000"
     image: frappe/erpnext:${ERPNEXT_VERSION}
     networks:
