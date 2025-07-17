@@ -29,14 +29,13 @@ services:
         bench set-config -g use_ssl 1;
         bench config dns_multitenant on;
         bench new-site $$SITES \
-          --force
+          --force \
           --db-type mariadb \
           --db-name erpnext \
           --db-user frappe \
           --db-password $$MYSQL_ROOT_PASSWORD \
           --db-root-username root \
           --db-root-password $$MYSQL_ROOT_PASSWORD \
-          --mariadb-root-password $$MYSQL_ROOT_PASSWORD \
           --admin-password $$SITE_ADMIN_PASS \
           --no-mariadb-socket \
           --install-app erpnext;
