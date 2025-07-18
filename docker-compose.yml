@@ -37,6 +37,7 @@ services:
           --db-root-password $$MYSQL_ROOT_PASSWORD \
           --admin-password $$SITE_ADMIN_PASS \
           --no-mariadb-socket \
+          --mariadb-user-host-login-scope='%' \
           --install-app erpnext;
         bench --site $$SITES set-config developer_mode 1;
         bench --site $$SITES clear-cache;
